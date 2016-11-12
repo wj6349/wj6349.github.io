@@ -2,8 +2,8 @@
 <html lang="ko">
 <head>
 <title>네이버 지도를 달아보자 : 마커 추가하기</title>
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 </head>
 <body>
 
@@ -11,13 +11,13 @@
 <!-- 예제 시작 -->
 
 <!-- 키는 발급받은 것으로 변경해 주세요 -->
-<script src="https://openapi.map.naver.com/openapi/v2/maps.js?clientId=P4D6GRH8roPKR0qcpSj_&submodules=geocoder"></script>
+<script src="http://openapi.map.naver.com/openapi/v3/maps.js?clientId=P4D6GRH8roPKR0qcpSj_&submodules=geocoder"></script>
 
 <div id="nmap" style="width:800px; height:600px;"></div>
 
 <script type="text/javascript">
 	// 지도 생성
-	
+	console.log(nhn.api);
 	var nmap = nhn.api.map.Map('nmap', { // nmap 은 지도가 생성될 요소의 id값 입니다 (원하시는 데로 네이밍!)
 		point : nhn.api.map.LatLng(naver.maps.TM128.fromPointToCoord(281982, 538758)), // 위도, 경도 설정 (이 값을 가운데로 하여 지도 생성)
 		zoom : 11 // 줌 설정
@@ -25,7 +25,7 @@
 	
 
 	// 마커로 사용할 이미지 정의
-	var marker_icon =  nhn.api.map.Icon('https://superkts.com/img/marker_arrive.png', new nhn.api.map.Size(32, 46), new nhn.api.map.Size(16, 46));
+	var marker_icon =  nhn.api.map.Icon('http://superkts.com/img/marker_arrive.png', new nhn.api.map.Size(32, 46), new nhn.api.map.Size(16, 46));
 
 	// 마커 정의
 	var marker = nhn.api.map.Marker(marker_icon, {point:new nhn.api.map.LatLng(naver.maps.TM128.fromPointToCoord(281982, 538758))});
